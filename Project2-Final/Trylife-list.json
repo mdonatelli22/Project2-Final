@@ -1,0 +1,468 @@
+[
+ {
+   "ItemName": "Diapers",
+   "Points": 6,
+   "BarcodeNumber": 175863
+ },
+ {
+   "ItemName": "Wipes",
+   "Points": 8,
+   "BarcodeNumber": 963158
+ },
+ {
+   "ItemName": "Formula",
+   "Points": 12,
+   "BarcodeNumber": 847652
+ },
+ {
+   "ItemName": "Liquid Formula",
+   "Points": 6,
+   "BarcodeNumber": 234795
+ },
+ {
+   "ItemName": "Single Serving Liquid",
+   "Points": 1,
+   "BarcodeNumber": 294136
+ },
+ {
+   "ItemName": "Baby Food",
+   "Points": 0,
+   "BarcodeNumber": 485673
+ },
+ {
+   "ItemName": "Cereal",
+   "Points": 2,
+   "BarcodeNumber": 139874
+ },
+ {
+   "ItemName": "Pedialyte",
+   "Points": 4,
+   "BarcodeNumber": 614293
+ },
+ {
+   "ItemName": "Other Food Items",
+   "Points": 1,
+   "BarcodeNumber": 723861
+ },
+ {
+   "ItemName": "Used Utensils",
+   "Points": 2,
+   "BarcodeNumber": 213458
+ },
+ {
+   "ItemName": "New Utensils",
+   "Points": 8,
+   "BarcodeNumber": 378129
+ },
+ {
+   "ItemName": "Breast Feeding Supplies",
+   "Points": 20,
+   "BarcodeNumber": 513864
+ },
+ {
+   "ItemName": "Boppy Pillows",
+   "Points": 20,
+   "BarcodeNumber": 927315
+ },
+ {
+   "ItemName": "Burp Cloths",
+   "Points": 2,
+   "BarcodeNumber": 475312
+ },
+ {
+   "ItemName": "Used Large Bottles",
+   "Points": 4,
+   "BarcodeNumber": 852364
+ },
+ {
+   "ItemName": "Used Small Bottles",
+   "Points": 2,
+   "BarcodeNumber": 329456
+ },
+ {
+   "ItemName": "Used Sippy Cups",
+   "Points": 4,
+   "BarcodeNumber": 186492
+ },
+ {
+   "ItemName": "New Bottles",
+   "Points": 5,
+   "BarcodeNumber": 287651
+ },
+ {
+   "ItemName": "Infant Crib",
+   "Points": 200,
+   "BarcodeNumber": 279318
+ },
+ {
+   "ItemName": "Regular Crib",
+   "Points": 400,
+   "BarcodeNumber": 581426
+ },
+ {
+   "ItemName": "Toddler Bed",
+   "Points": 300,
+   "BarcodeNumber": 724891
+ },
+ {
+   "ItemName": "Used Crib Mattress",
+   "Points": 24,
+   "BarcodeNumber": 849613
+ },
+ {
+   "ItemName": "Used Pack N Play",
+   "Points": 36,
+   "BarcodeNumber": 349621
+ },
+ {
+   "ItemName": "New Crib Mattress",
+   "Points": 48,
+   "BarcodeNumber": 596187
+ },
+ {
+   "ItemName": "New Powered Swing",
+   "Points": 60,
+   "BarcodeNumber": 483125
+ },
+ {
+   "ItemName": "New Pack N Play",
+   "Points": 72,
+   "BarcodeNumber": 147932
+ },
+ {
+   "ItemName": "Used Powered Swing",
+   "Points": 30,
+   "BarcodeNumber": 513427
+ },
+ {
+   "ItemName": "New Non-Powered Swing",
+   "Points": 40,
+   "BarcodeNumber": 914827
+ },
+ {
+   "ItemName": "Used Non-Powered Swing",
+   "Points": 20,
+   "BarcodeNumber": 231795
+ },
+ {
+   "ItemName": "New Exersaucers",
+   "Points": 48,
+   "BarcodeNumber": 358791
+ },
+ {
+   "ItemName": "Usedd Exersaucers",
+   "Points": 24,
+   "BarcodeNumber": 293514
+ },
+ {
+   "ItemName": "New Bouncer",
+   "Points": 48,
+   "BarcodeNumber": 871634
+ },
+ {
+   "ItemName": "Used Bouncer",
+   "Points": 24,
+   "BarcodeNumber": 296358
+ },
+ {
+   "ItemName": "New Walker",
+   "Points": 48,
+   "BarcodeNumber": 461735
+ },
+ {
+   "ItemName": "Used Walker",
+   "Points": 24,
+   "BarcodeNumber": 158673
+ },
+ {
+   "ItemName": "Used Hanging Bouncer",
+   "Points": 16,
+   "BarcodeNumber": 342817
+ },
+ {
+   "ItemName": "New Hanging Bouncer",
+   "Points": 32,
+   "BarcodeNumber": 268519
+ },
+ {
+   "ItemName": "New Lay-Down Bouncer",
+   "Points": 32,
+   "BarcodeNumber": 934678
+ },
+ {
+   "ItemName": "Used Lay-Down Bouncer",
+   "Points": 16,
+   "BarcodeNumber": 836271
+ },
+ {
+   "ItemName": "New Chair Boosters",
+   "Points": 24,
+   "BarcodeNumber": 271348
+ },
+ {
+   "ItemName": "Used Chair Boosters",
+   "Points": 12,
+   "BarcodeNumber": 967351
+ },
+ {
+   "ItemName": "New Bumbo Seats",
+   "Points": 24,
+   "BarcodeNumber": 954217
+ },
+ {
+   "ItemName": "Used Bumbo Seats",
+   "Points": 12,
+   "BarcodeNumber": 536987
+ },
+ {
+   "ItemName": "New High Chair",
+   "Points": 48,
+   "BarcodeNumber": 345682
+ },
+ {
+   "ItemName": "Used High Chair",
+   "Points": 24,
+   "BarcodeNumber": 478361
+ },
+ {
+   "ItemName": "Hygiene Products",
+   "Points": 20,
+   "BarcodeNumber": 451369
+ },
+ {
+   "ItemName": "Laundry Detergent",
+   "Points": 12,
+   "BarcodeNumber": 185742
+ },
+ {
+   "ItemName": "Laundry Softener",
+   "Points": 12,
+   "BarcodeNumber": 968213
+ },
+ {
+   "ItemName": "Diaper Genie",
+   "Points": 12,
+   "BarcodeNumber": 374815
+ },
+ {
+   "ItemName": "Other Household Items",
+   "Points": 15,
+   "BarcodeNumber": 479162
+ },
+ {
+   "ItemName": "Used Shoes",
+   "Points": 2,
+   "BarcodeNumber": 691753
+ },
+ {
+   "ItemName": "New Shoes",
+   "Points": 8,
+   "BarcodeNumber": 158329
+ },
+ {
+   "ItemName": "Hats",
+   "Points": 2,
+   "BarcodeNumber": 419325
+ },
+ {
+   "ItemName": "Bibs",
+   "Points": 2,
+   "BarcodeNumber": 184726
+ },
+ {
+   "ItemName": "All Small Accessories",
+   "Points": 2,
+   "BarcodeNumber": 695784
+ },
+ {
+   "ItemName": "Used Clothing",
+   "Points": 1,
+   "BarcodeNumber": 591827
+ },
+ {
+   "ItemName": "New Clothing",
+   "Points": 2,
+   "BarcodeNumber": 578496
+ },
+ {
+   "ItemName": "Swaddle",
+   "Points": 2,
+   "BarcodeNumber": 268197
+ },
+ {
+   "ItemName": "Used Jackets ",
+   "Points": 2,
+   "BarcodeNumber": 368741
+ },
+ {
+   "ItemName": "New Jackets",
+   "Points": 4,
+   "BarcodeNumber": 685312
+ },
+ {
+   "ItemName": "Underpants",
+   "Points": 1,
+   "BarcodeNumber": 286795
+ },
+ {
+   "ItemName": "Kids Clothing",
+   "Points": 0,
+   "BarcodeNumber": 792453
+ },
+ {
+   "ItemName": "Maternity Clothing",
+   "Points": 1,
+   "BarcodeNumber": 945237
+ },
+ {
+   "ItemName": "Maternity Bras",
+   "Points": 2,
+   "BarcodeNumber": 248716
+ },
+ {
+   "ItemName": "Belly Bands",
+   "Points": 2,
+   "BarcodeNumber": 462851
+ },
+ {
+   "ItemName": "Other Adult Clothing",
+   "Points": 0,
+   "BarcodeNumber": 8352746
+ },
+ {
+   "ItemName": "Bedding ",
+   "Points": 5,
+   "BarcodeNumber": 859736
+ },
+ {
+   "ItemName": "Blankets",
+   "Points": 1,
+   "BarcodeNumber": 762583
+ },
+ {
+   "ItemName": "Receiving Blankets",
+   "Points": 1,
+   "BarcodeNumber": 198653
+ },
+ {
+   "ItemName": "Bath Hygiene Products",
+   "Points": 10,
+   "BarcodeNumber": 457286
+ },
+ {
+   "ItemName": "New Baby Baths",
+   "Points": 16,
+   "BarcodeNumber": 532478
+ },
+ {
+   "ItemName": "Used Baby Baths",
+   "Points": 8,
+   "BarcodeNumber": 729534
+ },
+ {
+   "ItemName": "Baby Bath Towels",
+   "Points": 1,
+   "BarcodeNumber": 541379
+ },
+ {
+   "ItemName": "Baby Washcloths",
+   "Points": 1,
+   "BarcodeNumber": 326859
+ },
+ {
+   "ItemName": "3-in-1 Car Seat",
+   "Points": 300,
+   "BarcodeNumber": 941576
+ },
+ {
+   "ItemName": "Infant Car Seat",
+   "Points": 200,
+   "BarcodeNumber": 341762
+ },
+ {
+   "ItemName": "Booster Seat",
+   "Points": 100,
+   "BarcodeNumber": 463728
+ },
+ {
+   "ItemName": "New Car Seat Cover",
+   "Points": 12,
+   "BarcodeNumber": 843796
+ },
+ {
+   "ItemName": "Used Car Seat Cover",
+   "Points": 6,
+   "BarcodeNumber": 972183
+ },
+ {
+   "ItemName": "New Umbrella Stroller",
+   "Points": 24,
+   "BarcodeNumber": 467538
+ },
+ {
+   "ItemName": "Used Umbrella Stroller",
+   "Points": 12,
+   "BarcodeNumber": 194738
+ },
+ {
+   "ItemName": "New Stroller",
+   "Points": 64,
+   "BarcodeNumber": 493176
+ },
+ {
+   "ItemName": "Used Stroller",
+   "Points": 32,
+   "BarcodeNumber": 193645
+ },
+ {
+   "ItemName": "New Double Stroller",
+   "Points": 96,
+   "BarcodeNumber": 136429
+ },
+ {
+   "ItemName": "Used Double Stroller",
+   "Points": 48,
+   "BarcodeNumber": 427935
+ },
+ {
+   "ItemName": "New Baby Carrier",
+   "Points": 20,
+   "BarcodeNumber": 269183
+ },
+ {
+   "ItemName": "Used Baby Carrier",
+   "Points": 10,
+   "BarcodeNumber": 312957
+ },
+ {
+   "ItemName": "New Shopping Cart Cover",
+   "Points": 12,
+   "BarcodeNumber": 369412
+ },
+ {
+   "ItemName": "Used Shopping Cart Cover",
+   "Points": 10,
+   "BarcodeNumber": 298175
+ },
+ {
+   "ItemName": "Wagons",
+   "Points": 20,
+   "BarcodeNumber": 798125
+ },
+ {
+   "ItemName": "Toys",
+   "Points": 5,
+   "BarcodeNumber": 935817
+ },
+ {
+   "ItemName": "Book",
+   "Points": 1,
+   "BarcodeNumber": 964587
+ },
+ {
+   "ItemName": "Bottles",
+   "Points": 1,
+   "BarcodeNumber": 825463
+ }
+]
+

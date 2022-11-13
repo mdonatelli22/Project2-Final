@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ScanningView: View {
+    
+    @EnvironmentObject var VM: ViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ScrollView{
+            ForEach(VM.trylifelists){trylifelist in
+                Text(trylifelist.ItemName)
+            }
+        }
+        
     }
 }
 

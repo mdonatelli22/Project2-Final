@@ -18,6 +18,8 @@
 		A71D83E2291EDA1200EC78EF /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D83E1291EDA1200EC78EF /* ListView.swift */; };
 		A71D83E4291EDA2400EC78EF /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D83E3291EDA2400EC78EF /* ReviewView.swift */; };
 		A71D83E6291EDA3100EC78EF /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D83E5291EDA3100EC78EF /* ReceiptView.swift */; };
+		A71D83E8291F120700EC78EF /* Trylife-list.json in Resources */ = {isa = PBXBuildFile; fileRef = A71D83E7291F120700EC78EF /* Trylife-list.json */; };
+		A71D83EA291F1AA800EC78EF /* TryLifeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D83E9291F1AA800EC78EF /* TryLifeList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		A71D83E1291EDA1200EC78EF /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		A71D83E3291EDA2400EC78EF /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		A71D83E5291EDA3100EC78EF /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
+		A71D83E7291F120700EC78EF /* Trylife-list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Trylife-list.json"; sourceTree = "<group>"; };
+		A71D83E9291F1AA800EC78EF /* TryLifeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryLifeList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		A71D83C7291ED7CF00EC78EF /* Project2-Final */ = {
 			isa = PBXGroup;
 			children = (
+				A71D83E7291F120700EC78EF /* Trylife-list.json */,
 				A71D83CC291ED7D000EC78EF /* Assets.xcassets */,
 				A71D83CE291ED7D000EC78EF /* Preview Content */,
 			);
@@ -108,6 +113,7 @@
 		A71D83D8291ED94C00EC78EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A71D83E9291F1AA800EC78EF /* TryLifeList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +178,7 @@
 			files = (
 				A71D83D0291ED7D000EC78EF /* Preview Assets.xcassets in Resources */,
 				A71D83CD291ED7D000EC78EF /* Assets.xcassets in Resources */,
+				A71D83E8291F120700EC78EF /* Trylife-list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +192,7 @@
 				A71D83E6291EDA3100EC78EF /* ReceiptView.swift in Sources */,
 				A71D83E4291EDA2400EC78EF /* ReviewView.swift in Sources */,
 				A71D83DE291ED9DB00EC78EF /* ScanningView.swift in Sources */,
+				A71D83EA291F1AA800EC78EF /* TryLifeList.swift in Sources */,
 				A71D83DC291ED9C500EC78EF /* AddingItemsView.swift in Sources */,
 				A71D83CB291ED7CF00EC78EF /* ContentView.swift in Sources */,
 				A71D83E2291EDA1200EC78EF /* ListView.swift in Sources */,

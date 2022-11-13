@@ -22,7 +22,7 @@ struct AddingItemsView: View {
                             isShowingScanView = true
                         }
                         
-                        NavigationLink(destination: EnterBarcodeView(), isActive: $isShowingEnterView) { EmptyView() }
+                        NavigationLink(destination: EnterBarcodeView(barcode: "Enter Barcode here"), isActive: $isShowingEnterView) { EmptyView() }
 
                         Button("Enter Barcode") {
                             isShowingEnterView = true

@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct EnterBarcodeView: View {
+    
+    @State var barcode : String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading){
+            TextField("Enter the barcode number", text: $barcode)
+            Text("The barcode number is:\(barcode)")
+        }
     }
 }
 
-struct EnterBarcodeView_Previews: PreviewProvider {
-    static var previews: some View {
-        EnterBarcodeView()
-    }
-}
+//struct EnterBarcodeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EnterBarcodeView()
+//    }
+//}
