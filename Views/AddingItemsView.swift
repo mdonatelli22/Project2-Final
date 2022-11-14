@@ -15,26 +15,49 @@ struct AddingItemsView: View {
     
     var body: some View {
         //NavigationView {
+        
                     VStack {
+                        
+                        //how to put in top corner?
+                       Image("trylife-image")
+                           .resizable()
+                           .frame(width: 90, height: 90)
+
+                        
                         NavigationLink(destination: ScanningView(), isActive: $isShowingScanView) { EmptyView() }
 
-                        Button("Scan items") {
-                            isShowingScanView = true
-                        }
+                        Text("Redeem Rewards")
+                            .foregroundColor(.black)
+                            .bold()
                         
-                        NavigationLink(destination: EnterBarcodeView(barcode: "Enter Barcode here"), isActive: $isShowingEnterView) { EmptyView() }
-
-                        Button("Enter Barcode") {
+                        Text("")
+                        
+                        Text("Choose a method of searching")
+                        Text("the catelogue for items:")
+                        
+                        
+                        Button(){
+                             isShowingScanView = true
+                        }label:{
+                            Text(" Scan Items   ")
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                        }.padding()
+                        
+                        
+                        NavigationLink(destination: EnterBarcodeView(barcode: ""), isActive: $isShowingEnterView) { EmptyView() }
+                        Button(){
                             isShowingEnterView = true
+                        }label:{
+                            Text("Enter Barcode")
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
                         }
-                    
                     }
                     .navigationTitle("Add items")
-                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.882, green: 0.289, blue: 0.606)/*@END_MENU_TOKEN@*/)
-
-                    
-
-                //}
+//                    .foregroundColor()
     }
 }
 

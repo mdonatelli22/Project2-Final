@@ -20,37 +20,40 @@ struct ContentView: View {
                     
                     Image("trylife-logo")
                         .resizable()
-                        .frame(width: 300, height: 300)
+                        .frame(width: 300, height: 320)
                     
-                    Text("'Description'")
-                        .font(.custom("AmericanTypewriter", fixedSize: 20))
+                    
+                    Text("Rewards System")
+                        .font(.custom("Open Sans", fixedSize: 25))
+                        .bold()
+                    Text("")
+                    Text("Welcome to TryLife's rewards system!")
+                    Text("Here you can reedem your points")
+                    Text("earned through our program for free")
+                    Text("items such as diapers, formula")
+                    Text("wipes, pillows and more! ")
+                       // .font(.custom("Open Sans"))
                    
                     
                     NavigationLink{
                         AddingItemsView()
                     }label: {
-                       
+                   
                         VStack{
-                           
-                            Text("Start")
-                                .padding()
-                                .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.882, green: 0.289, blue: 0.606)/*@END_MENU_TOKEN@*/)
-                                .background(RoundedRectangle(cornerRadius: 5).stroke(Color(red: 0.004, green: 0.637, blue: 0.704)))
-                                .font(.custom("AmericanTypewriter", fixedSize: 25))
-                            Spacer()
-                                .frame(height: 250)
-                           
+                                Spacer()
+                                Text("")
+                                Text("Begin")
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                                    .font(.custom("Open Sans", fixedSize: 25))
+                                    Spacer()
+                                    .frame(height: 250)
                         }
-                        
                     }
                 }
-                
             }
-            
-           
         }
-        
-        
     }
 }
 
