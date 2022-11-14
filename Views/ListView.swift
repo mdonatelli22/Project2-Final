@@ -9,7 +9,18 @@ import SwiftUI
 
 struct ListView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("listview")
+        
+        //loop through user's shopping list and display items like in nfl example
+        //state number of points before and after
+        //enter another item button
+        //two lists? one for checkout another for purchases
+        //list view
+        //button to check out and goes to review
+        //button to go back to add item
+        //delete button
+        
+        
     }
 }
 

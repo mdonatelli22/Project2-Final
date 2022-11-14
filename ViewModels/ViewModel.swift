@@ -12,10 +12,28 @@ import SwiftUI
 class ViewModel : ObservableObject{
     
     @Published var trylifelists = [TryLifeList]()
+    @Published var foundItem: Bool = false
+    @Published var item: TryLifeList?
     
     init(){
 
         readJSONFile()
+    }
+    
+    func loop(barcode : Int) -> TryLifeList? {
+//        @EnvironmentObject var VM : ViewModel
+        //@State var barcode : Int = 0
+        for item in trylifelists{
+            if(item.BarcodeNumber == barcode){
+                print(item.ItemName)
+                return item
+            }else{
+                print("No item found")
+                
+            }
+            
+        }
+        return nil
     }
     
     func readJSONFile(){

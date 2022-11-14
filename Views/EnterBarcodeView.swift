@@ -13,42 +13,68 @@ struct EnterBarcodeView: View {
     @EnvironmentObject var VM : ViewModel
     
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(){
             Text("Barcode Search")
                 .foregroundColor(.teal)
                 .bold()
                 .font(.largeTitle)
             Text("")
-            Text("Enter an item's barcode number to see if it is available")
+            Text("Enter an item's barcode number")
+            Text("to see if it is available in the catelogue")
             Text("")
                     TextField(
-                        "Enter code here",
+                        "Enter barcode here",
                         text: $barcode
-                    )
+                    ).onSubmit {
+                        print("\(barcode)")
+                       
+                        VM.item = VM.loop(barcode : Int(barcode) ?? 0)
+                        if (VM.item != nil){
+                            VM.foundItem = true
+                        }
+                    }
                 }
                 .textFieldStyle(.roundedBorder)
-        //loop through TryLifeLists and if list.barcode == barcode then
-        //Text($barcode)
-    }
-    
-}
-
-//->String
-//convert string state barcode to int barcode
-func loop(){
-    @EnvironmentObject var VM : ViewModel
-    @State var barcode : Int = 0
-    for item in VM.trylifelists{
-        if(item.BarcodeNumber == barcode){
-            print(item.ItemName)
-        }else{
-            print("No item found")
-        }
+                
+                .sheet(isPresented: $VM.foundItem) {
+                    DetailItemView()
+                }
         
+        //on submit loop through TryLifeLists and if list.barcode == barcode
+        //if so then show item and number of points it costs as well as add to list button
     }
     
 }
 
+
+struct DetailItemView: View {
+    
+    @EnvironmentObject var VM : ViewModel
+ 
+    
+    var body: some View {
+        VStack(){
+            Text("\(VM.item?.ItemName ?? "none")")
+                .bold()
+                .font(.largeTitle)
+                
+            NavigationLink(destination: ListView()){
+                
+                Button(action: {
+                    //add item to shopping list
+                }){
+                    Text(" Add to cart ")
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                    
+                }.padding()
+            }
+            
+        }
+    }
+}
+            
 //struct EnterBarcodeView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        EnterBarcodeView()

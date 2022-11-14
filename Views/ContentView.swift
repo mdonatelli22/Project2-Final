@@ -51,7 +51,12 @@ struct ContentView: View {
                                     .frame(height: 250)
                         }
                     }
+                    
                 }
+                
+               // ZStack(alignment: .bottom){
+               //     Rectangle().frame(width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.height/8, alignment: .bottom)
+                //}
             }
         }
     }
