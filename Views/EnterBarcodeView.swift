@@ -21,12 +21,13 @@ struct EnterBarcodeView: View {
             Text("")
             Text("Enter an item's barcode number")
             Text("to see if it is available in the catelogue")
+            Text("Press enter or return to search")
             Text("")
                     TextField(
                         "Enter barcode here",
                         text: $barcode
                     ).onSubmit {
-                        print("\(barcode)")
+    
                        
                         VM.item = VM.loop(barcode : Int(barcode) ?? 0)
                         if (VM.item != nil){
@@ -39,7 +40,6 @@ struct EnterBarcodeView: View {
                 .sheet(isPresented: $VM.foundItem) {
                     DetailItemView()
                 }
-        
         //on submit loop through TryLifeLists and if list.barcode == barcode
         //if so then show item and number of points it costs as well as add to list button
     }
@@ -50,7 +50,7 @@ struct EnterBarcodeView: View {
 struct DetailItemView: View {
     
     @EnvironmentObject var VM : ViewModel
- 
+    @State private var goesToList: Bool = false
     
     var body: some View {
         VStack(){
@@ -58,18 +58,48 @@ struct DetailItemView: View {
                 .bold()
                 .font(.largeTitle)
                 
-            NavigationLink(destination: ListView()){
+//            NavigationLink(destination: ListView()){
+//
+//                Button(action: {
+//                    //add item to shopping list
+//                    VM.foundItem = false
+//                }){
+//                    Text(" Add to cart ")
+//                        .padding()
+//                        .foregroundColor(.white)
+//                        .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+//
+//                }.padding()
+//            }
+            
+            
+           
+
+            NavigationLink(
+                destination: ListView(),
+               		 isActive: $goesToList) {
+                Button(action: {
+                    VM.foundItem = false
+                    goesToList = true }
+                    ) {
+                    Text("Add to cart")
+                }
+                
+            }
+            
+            //NavigationLink(){
                 
                 Button(action: {
                     //add item to shopping list
+                    VM.foundItem = false
                 }){
-                    Text(" Add to cart ")
+                    Text(" Cancel ")
                         .padding()
                         .foregroundColor(.white)
                         .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
                     
                 }.padding()
-            }
+           // }
             
         }
     }
