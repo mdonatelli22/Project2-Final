@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListView: View {
     var body: some View {
-        Text("Checkout")
+        
         
         //loop through user's shopping list and display items like in nfl example
         //state number of points before and after
@@ -19,6 +19,9 @@ struct ListView: View {
         //button to check out and goes to review
         //button to go back to add item
         //delete button
+        
+        Text("List")
+            .font(.largeTitle)
         
         
     }

@@ -86,17 +86,26 @@ struct DetailItemView: View {
             
            
 
-            NavigationLink(
-                destination: ListView(),
-               		 isActive: $goesToList) {
-                Button(action: {
-                    VM.foundItem = false
-                    goesToList = true }
-                    ) {
-                    Text("Add to cart")
-                }
+            //NavigationLink(
+//                destination: ListView(),
+//               		 isActive: $goesToList) {
+//                Button(action: {
+//                    VM.foundItem = true
+//                    goesToList = true }
+//                    ) {
+//                    Text("Add to cart")
+//                }
                 
-            }
+            //}
+            
+            Button("Add to cart"){
+                self.goesToList = true
+            }.sheet(isPresented: $goesToList, content: {
+                ListView()
+            })
+//            .padding()
+//            .foregroundColor(.white)
+//            .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
             
             //NavigationLink(){
                 
