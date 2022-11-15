@@ -9,7 +9,26 @@ import SwiftUI
 
 struct ReceiptView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack{
+            Image("trylife-image")
+                .resizable()
+                .frame(width: 90, height: 90)
+                .position(x: 70, y: 0)
+            
+            
+            Text("Receipt")
+                .bold()
+                .font(.largeTitle)
+                .position(x: 160, y: 5)
+                .foregroundColor(.teal)
+                
+            Spacer()
+                .padding()
+      
+                
+        }
+        
     }
 }
 

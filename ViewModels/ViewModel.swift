@@ -15,6 +15,9 @@ class ViewModel : ObservableObject{
     @Published var foundItem: Bool = false
     @Published var item: TryLifeList?
     
+    @Published var ifList : Bool = false
+    @Published var itemList = [TryLifeList]()
+    
     init(){
 
         readJSONFile()

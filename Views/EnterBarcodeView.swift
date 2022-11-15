@@ -11,8 +11,14 @@ struct EnterBarcodeView: View {
     
     @State var barcode : String = ""
     @EnvironmentObject var VM : ViewModel
+  
     
     var body: some View {
+        
+        
+        
+        if VM.ifList == false {
+        
         VStack(){
             
             Image("trylife-image")
@@ -49,9 +55,13 @@ struct EnterBarcodeView: View {
                 }
         Spacer()
             .position(x: 10, y: 10)
-       
-        //on submit loop through TryLifeLists and if list.barcode == barcode
-        //if so then show item and number of points it costs as well as add to list button
+        }else{
+            
+            ListView()
+            
+        }
+        
+        
     }
   
     
@@ -62,52 +72,65 @@ struct DetailItemView: View {
     
     @EnvironmentObject var VM : ViewModel
     @State private var goesToList: Bool = false
+//    @State var itemList = [TryLifeList]()
+    @State var selectedSubView: Int? = nil
+    
     
     var body: some View {
+        
+        NavigationView {
         VStack(){
             Text("\(VM.item?.ItemName ?? "none")")
                 .bold()
                 .font(.largeTitle)
-                
-//            NavigationLink(destination: ListView()){
+
+            Text("Cost:\(VM.item?.Points ?? 0) points")
+            
+//            NavigationLink(tag: 1, selection: $selectedSubView, destination: {
+//                ListView(itemList: $itemList)
+//            }, label: {
 //
-//                Button(action: {
-//                    //add item to shopping list
-//                    VM.foundItem = false
-//                }){
-//                    Text(" Add to cart ")
-//                        .padding()
-//                        .foregroundColor(.white)
-//                        .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+//            })
+            
+            Button {
+                //selectedSubView = 1
+                self.VM.itemList.append(VM.item!)
+                VM.foundItem = false
+                VM.ifList =  true
+            } label: {
+                Text("Add to cart")
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+            }
+            
+//            NavigationLink {
+//                // self.itemList.append(VM.item!)
+//                ListView(itemList: $itemList)
+//            } label: {
+//                Text("Add to cart")
+//                    .padding()
+//                    .foregroundColor(.white)
+//                    .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+//            }
+
+//            Button {
 //
-//                }.padding()
+//            } label: {
+//                Text("Add to cart")
+//            }
+
+//            Button("Add to cart"){
+//
+//
 //            }
             
+//            .sheet(isPresented: $goesToList, content: {
+//
+//                ListView(itemList: $itemList)
+//            })
             
-           
-
-            //NavigationLink(
-//                destination: ListView(),
-//               		 isActive: $goesToList) {
-//                Button(action: {
-//                    VM.foundItem = true
-//                    goesToList = true }
-//                    ) {
-//                    Text("Add to cart")
-//                }
-                
-            //}
             
-            Button("Add to cart"){
-                self.goesToList = true
-            }.sheet(isPresented: $goesToList, content: {
-                ListView()
-            })
-//            .padding()
-//            .foregroundColor(.white)
-//            .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
-            
-            //NavigationLink(){
                 
                 Button(action: {
                     //add item to shopping list
@@ -119,8 +142,8 @@ struct DetailItemView: View {
                         .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
                     
                 }.padding()
-           // }
             
+        }
         }
     }
 }
