@@ -18,20 +18,24 @@ struct ContentView: View {
                     
                 VStack{
                     
-                    Image("trylife-logo")
+                    Image("logo")
                         .resizable()
-                        .frame(width: 300, height: 320)
+                        .frame(width: 175, height: 120)
                     
                     
-                    Text("Rewards System")
-                        .font(.custom("Open Sans", fixedSize: 25))
+                    Text("Shopping Center")
+                        //.font(.custom("Arial", fixedSize: 25))
+                        .font(.largeTitle)
                         .bold()
                     Text("")
-                    Text("Welcome to TryLife's rewards system!")
-                    Text("Here you can reedem your points")
-                    Text("earned through our program for free")
-                    Text("items such as diapers, formula")
-                    Text("wipes, pillows and more! ")
+                    Text("Welcome to the TryLife center's shopping")
+                        //.font(.custom("Arial", fixedSize: 15))
+                    Text("application! Please press the button")
+                        //.font(.custom("Arial", fixedSize: 15))
+                    Text("below to begin scanning items.")
+                        //.font(.custom("Arial", fixedSize: 15))
+//                    Text("items such as diapers, formula")
+//                    Text("wipes, pillows and more! ")
                        // .font(.custom("Open Sans"))
                    
                     
@@ -46,7 +50,7 @@ struct ContentView: View {
                                     .padding()
                                     .foregroundColor(.white)
                                     .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
-                                    .font(.custom("Open Sans", fixedSize: 25))
+                                    .font(.custom("", fixedSize: 25))
                                     Spacer()
                                     .frame(height: 250)
                         }

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ReviewView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Review Items")
+            .bold()
+            .font(.largeTitle)
+            .position(x: 160, y: 5)
+            .foregroundColor(.teal)
     }
 }
 

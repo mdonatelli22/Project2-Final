@@ -11,7 +11,7 @@ typealias TryLifeLists = [TryLifeList]
 
 struct TryLifeList : Identifiable, Decodable{
     
-    var id: UUID? = nil
+    var id = UUID()
     var ItemName : String
     var Points : Int
     var BarcodeNumber : Int

@@ -18,22 +18,29 @@ struct AddingItemsView: View {
         
                     VStack {
                         
-                        //how to put in top corner?
+                       
                        Image("trylife-image")
                            .resizable()
                            .frame(width: 90, height: 90)
+                           .position(x: 70, y: 0)
+                        
+                        Image("tree")
+                            .resizable()
+                            .frame(width: 200, height: 150)
+                            .position(x: 230, y: 50)
+                            
 
                         
                         NavigationLink(destination: ScanningView(), isActive: $isShowingScanView) { EmptyView() }
 
-                        Text("Redeem Rewards")
+                        Text("Begin Scanning Items")
                             .foregroundColor(.black)
                             .bold()
                         
                         Text("")
                         
-                        Text("Choose a method of searching")
-                        Text("the catelogue for items:")
+                        Text("Choose a method of scanning")
+                        Text("the customer's items:")
                         
                         
                         Button(){
@@ -55,8 +62,10 @@ struct AddingItemsView: View {
                                 .foregroundColor(.white)
                                 .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
                         }
+                     
                     }
-                    .navigationTitle("Add items")
+        Spacer()
+                    //.navigationTitle("Add items")
 //                    .foregroundColor()
     }
 }

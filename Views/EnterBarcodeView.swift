@@ -14,13 +14,20 @@ struct EnterBarcodeView: View {
     
     var body: some View {
         VStack(){
+            
+            Image("trylife-image")
+                .resizable()
+                .frame(width: 90, height: 90)
+                .position(x: 70, y: 0)
+            
+            
             Text("Barcode Search")
                 .foregroundColor(.teal)
                 .bold()
                 .font(.largeTitle)
             Text("")
             Text("Enter an item's barcode number")
-            Text("to see if it is available in the catelogue")
+            Text("to see if it is available in the catalogue")
             Text("Press enter or return to search")
             Text("")
                     TextField(
@@ -40,9 +47,13 @@ struct EnterBarcodeView: View {
                 .sheet(isPresented: $VM.foundItem) {
                     DetailItemView()
                 }
+        Spacer()
+            .position(x: 10, y: 10)
+       
         //on submit loop through TryLifeLists and if list.barcode == barcode
         //if so then show item and number of points it costs as well as add to list button
     }
+  
     
 }
 
