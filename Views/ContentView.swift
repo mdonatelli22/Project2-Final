@@ -28,7 +28,7 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .bold()
                     Text("")
-                    Text("Welcome to the TryLife center's shopping")
+                    Text("Welcome to the TryLife Center's shopping")
                         //.font(.custom("Arial", fixedSize: 15))
                     Text("application! Please press the button")
                         //.font(.custom("Arial", fixedSize: 15))

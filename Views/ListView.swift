@@ -23,63 +23,77 @@ struct ListView: View {
                     .frame(width: 90, height: 90)
                     .position(x: 70, y: 0)
                 
-                Text("List")
+                Text("Shopping Cart")
                     .bold()
                     .font(.largeTitle)
+                    .multilineTextAlignment(.center)
                     .foregroundColor(.teal)
+                    
+                
+                Spacer()
+                    .position(x: 50, y: 50)
+                    .padding()
+                
+                
                 ScrollView{
                     
                     ForEach(VM.itemList){ item in
                         Text("\(item.ItemName) : \(item.Points) points")
-                        //Text("Number of points: \(item.Points)")
+                            .bold()
+
                     }
                     
                 }
                 
                 Spacer()
-                    .padding()
+                    .position(x: 30, y: 30)
                 
-                NavigationLink(tag: 1, selection: $selectedSubView, destination: {
-                    AddingItemsView()
-                }, label: {
-                   
-                })
-                
-                Button {
+                //HStack(spacing:10){
+                    NavigationLink(tag: 1, selection: $selectedSubView, destination: {
+                        AddingItemsView()
+                    }, label: {
+                       
+                    })
                     
-                    VM.ifList = false
-                    selectedSubView = 1
-                } label: {
-                    Text("Add another item")
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
-                }
-                
-                Spacer()
-                    .position(x: 5, y: 5)
-                
-                NavigationLink(tag: 2, selection: $selectedSubView, destination: {
-                    ReviewView()
-                }, label: {
+                    Button {
+                        
+                        VM.ifList = false
+                        selectedSubView = 1
+                    } label: {
+                        Text("Add another item")
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                    }
+                    
+                    Spacer()
+                        
                    
-                })
+                    NavigationLink(tag: 2, selection: $selectedSubView, destination: {
+                        ReviewView()
+                    }, label: {
+                       
+                    })
 
+                    
+                    
+                    Button{
+                        selectedSubView = 2
+                    } label: {
+                        Text("Finish")
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                    }
+                    //Spacer()
                 
+                   
+                    
+                }//.padding(.horizontal, 10)
                 
-                Button{
-                    selectedSubView = 2
-                } label: {
-                    Text("Finish")
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
-                }
-                
-                Spacer()
-                    .padding()
            
-            }
+            //}
+            
         //}
         
         

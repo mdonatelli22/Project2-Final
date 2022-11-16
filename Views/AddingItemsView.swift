@@ -27,7 +27,7 @@ struct AddingItemsView: View {
                         Image("tree")
                             .resizable()
                             .frame(width: 200, height: 150)
-                            .position(x: 230, y: 50)
+                            .position(x: 225, y: 60)
                             
 
                         

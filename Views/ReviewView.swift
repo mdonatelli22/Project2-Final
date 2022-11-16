@@ -49,6 +49,16 @@ struct ReviewView: View {
                 
             }
             
+            Button{
+                
+            }label:{
+                Image(systemName: "plus")
+                    .foregroundColor(.green)
+                    
+            }.position(x: 30, y: 90)
+            
+            
+            
             Spacer()
                 .padding()
             

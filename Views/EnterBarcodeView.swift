@@ -26,11 +26,15 @@ struct EnterBarcodeView: View {
                 .frame(width: 90, height: 90)
                 .position(x: 70, y: 0)
             
+            Spacer()
+                .padding()
             
             Text("Barcode Search")
                 .foregroundColor(.teal)
                 .bold()
                 .font(.largeTitle)
+            
+           
             Text("")
             Text("Enter an item's barcode number")
             Text("to see if it is available in the catalogue")
@@ -39,7 +43,9 @@ struct EnterBarcodeView: View {
                     TextField(
                         "Enter barcode here",
                         text: $barcode
-                    ).onSubmit {
+                    )
+                    .padding()
+                    .onSubmit {
     
                        
                         VM.item = VM.loop(barcode : Int(barcode) ?? 0)
@@ -53,8 +59,8 @@ struct EnterBarcodeView: View {
                 .sheet(isPresented: $VM.foundItem) {
                     DetailItemView()
                 }
-        Spacer()
-            .position(x: 10, y: 10)
+            Spacer()
+                .position(x: 2, y: 2)
         }else{
             
             ListView()
