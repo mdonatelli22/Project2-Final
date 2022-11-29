@@ -11,26 +11,27 @@ struct ReceiptView: View {
     
     @EnvironmentObject var VM : ViewModel
   
+    @State var selectedSubView: Int? = nil
     
     var body: some View {
         
         let totalPoints = self.VM.itemList.compactMap { $0.Points }.reduce(0) { $0 + $1 }
         
         VStack{
-            Image("trylife-image")
-                .resizable()
-                .frame(width: 90, height: 90)
-                .position(x: 70, y: 0)
+//            Image("trylife-image")
+//                .resizable()
+//                .frame(width: 90, height: 90)
+//                .position(x: 70, y: 0)
+//
             
-            
-            Text("Receipt")
-                .bold()
-                .font(.largeTitle)
-                .position(x: 160, y: 5)
-                .foregroundColor(.teal)
-                
-            Spacer()
-                .padding()
+//            Text("Receipt")
+//                .bold()
+//                .font(.largeTitle)
+//                .position(x: 160, y: 5)
+//                .foregroundColor(.teal)
+//
+//            Spacer()
+//                .padding()
             
           
             ScrollView{
@@ -40,8 +41,8 @@ struct ReceiptView: View {
                 }
             }
             
-            Spacer()
-                .padding()
+//            Spacer()
+//                .padding()
             
             HStack{
                 Text("Total : \(totalPoints) points")
@@ -49,22 +50,26 @@ struct ReceiptView: View {
                     .bold()
                     .foregroundColor(Color(red: 0.8, green: 0.0, blue: 0.5))
                 
-                
-                                
-                Button{
-                   
-                }label:{
-                    Text("Back")
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
-                }
+                NavigationLink(tag: 1, selection: $selectedSubView, destination: {
+                    ContentView()
+                }, label:{
+                    Button{
+                        //make list empty again
+                        
+                        selectedSubView = 1
+                    }label:{
+                        Text("Back")
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                    }
+                })
                 
             }
             
             
                 
-        }
+        }.navigationTitle("Receipt")
         
     }
 }

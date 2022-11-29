@@ -25,24 +25,24 @@ struct AddingItemsView: View {
             VStack {
                 
                
-               Image("trylife-image")
-                   .resizable()
-                   .frame(width: 90, height: 90)
-                   .position(x: 70, y: 0)
+//               Image("trylife-image")
+//                   .resizable()
+//                   .frame(width: 90, height: 90)
+//                   .position(x: 70, y: 0)
                 
                 
 
                 
                 NavigationLink(destination: ScanningView(), isActive: $isShowingScanView){ EmptyView() }
 
-                Text("Begin Scanning Items")
-                    .foregroundColor(.black)
-                    .bold()
-                
-                Text("")
-
-                Text("Choose a method of scanning")
-                Text("the customer's items:")
+//                Text("Begin Scanning Items")
+//                    .foregroundColor(.black)
+//                    .bold()
+//
+//                Text("")
+//
+//                Text("Choose a method of scanning")
+//                Text("the customer's items:")
 
                 
                 HStack{
@@ -61,8 +61,8 @@ struct AddingItemsView: View {
                     }){
                         Text(" Add to cart ")
                             .padding()
-                            .foregroundColor(.white)
-                            .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
                         
                     }.padding()
                     
@@ -70,20 +70,23 @@ struct AddingItemsView: View {
                     
                 }//.frame(minWidth: 0, maxHeight: 400, alignment: .topLeading)
                 
+                Text("or")
+                
                 Button(){
                      isShowingScanView = true
                 }label:{
                     Text(" Scan Items   ")
                         .padding()
-                        .foregroundColor(.white)
-                        .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
                 }.padding()
                 
-//                Text("Shopping List")
-//                    .bold()
-//                    .font(.largeTitle)
-//                    .multilineTextAlignment(.center)
-//                    .foregroundColor(.teal)
+               
+                Text("Shopping Cart")
+                    .bold()
+                    //.padding()
+                    .foregroundColor(.teal)
+                    //.font(.title)
                 
                 ScrollView(.vertical){
                     
@@ -104,7 +107,6 @@ struct AddingItemsView: View {
                 }, label: {
                     Button {
                         
-                        
                         selectedSubView = 1
                     } label: {
                         Text("Checkout")
@@ -115,14 +117,10 @@ struct AddingItemsView: View {
                 })
                 
                 
-                
              
-                
-             
-            }.frame(minWidth: 0, maxHeight: 400, alignment: .topLeading)
-        }
+            }.frame(maxHeight: .infinity, alignment: .bottom)
+        }.navigationTitle("Scan Items")
         
-        Spacer()
         
     }
 }
@@ -130,6 +128,7 @@ struct AddingItemsView: View {
 struct AddingItemsView_Previews: PreviewProvider {
     static var previews: some View {
         AddingItemsView()
+            .environmentObject(ViewModel())
     }
 }
 

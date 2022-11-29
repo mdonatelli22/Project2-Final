@@ -21,19 +21,19 @@ struct ReviewView: View {
         
         VStack{
             
-            Image("trylife-image")
-                .resizable()
-                .frame(width: 90, height: 90)
-                .position(x: 70, y: 0)
+//            Image("trylife-image")
+//                .resizable()
+//                .frame(width: 90, height: 90)
+//                .position(x: 70, y: 0)
+//
+//            Text("Review Items")
+//                .bold()
+//                .font(.largeTitle)
+//                .position(x: 160, y: 5)
+//                .foregroundColor(.teal)
             
-            Text("Review Items")
-                .bold()
-                .font(.largeTitle)
-                .position(x: 160, y: 5)
-                .foregroundColor(.teal)
-            
-            Spacer()
-                .padding()
+//            Spacer()
+//                .padding()
             
             VStack{
                 List{
@@ -51,8 +51,8 @@ struct ReviewView: View {
             
             
             
-            Spacer()
-                .padding()
+//            Spacer()
+//                .padding()
             
             
             NavigationLink(tag: 1, selection: $selectedSubView, destination: {
@@ -69,9 +69,10 @@ struct ReviewView: View {
                     .foregroundColor(.white)
                     .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
             }
-            Spacer()
-                .padding()
-        }
+//            Spacer()
+//                .padding()
+        }.navigationTitle("Review Items")
+                       
         
     }
 }

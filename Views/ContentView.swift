@@ -14,9 +14,6 @@ struct ContentView: View {
         
         NavigationView{
             ZStack{
-//                Image("background")
-//                    .resizable()
-//                    .ignoresSafeArea()
                     
                 VStack{
                     
@@ -36,9 +33,7 @@ struct ContentView: View {
                         //.font(.custom("Arial", fixedSize: 15))
                     Text("below to begin scanning items.")
                         //.font(.custom("Arial", fixedSize: 15))
-//                    Text("items such as diapers, formula")
-//                    Text("wipes, pillows and more! ")
-                       // .font(.custom("Open Sans"))
+
                    
                     
                     NavigationLink{
