@@ -13,7 +13,7 @@ import AVFoundation
 
 struct ScanningView: View {
 
-    //@EnvironmentObject var VM: ViewModel
+    @EnvironmentObject var VM: ViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
@@ -27,10 +27,10 @@ struct ScanningView: View {
                 ){
                     //When the scanner found a barcode
                     print("BarCodeType =",$0.type.rawValue, "Value =",$0.value)
-//                    VM.item = VM.loop(value : Int(value) ?? 0)
-//                    if (VM.item != nil){
-//                        self.VM.itemList.append(VM.item!)
-//                    }
+                    VM.item = VM.loop(barcode : Int($0.value) ?? 0)
+                    if (VM.item != nil){
+                        self.VM.itemList.append(VM.item!)
+                    }
                     
                     self.presentationMode.wrappedValue.dismiss()
                    

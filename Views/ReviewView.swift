@@ -7,10 +7,15 @@
 
 import SwiftUI
 
+
 struct ReviewView: View {
     
     @EnvironmentObject var VM : ViewModel
     @State var selectedSubView: Int? = nil
+    
+    private func removeItems(at offsets: IndexSet) {
+        self.VM.itemList.remove(atOffsets: offsets)
+    }
     
     var body: some View {
         
@@ -30,32 +35,19 @@ struct ReviewView: View {
             Spacer()
                 .padding()
             
-            ScrollView{
-                ForEach(VM.itemList){item in
-                    HStack{
-                        Text("\(item.ItemName) : \(item.Points) points")
-                            .bold()
-                        
-                        Button{
+            VStack{
+                List{
+                    ForEach(VM.itemList){item in
+                        HStack{
+                            Text("\(item.ItemName) : \(item.Points) points")
+                                .bold()
                             
-                        }label: {
-                            Image(systemName: "trash")
-                                .foregroundColor(.red)
                         }
                         
-                    }
+                    }.onDelete(perform: self.removeItems)
                     
                 }
-                
             }
-            
-            Button{
-                
-            }label:{
-                Image(systemName: "plus")
-                    .foregroundColor(.green)
-                    
-            }.position(x: 30, y: 90)
             
             
             

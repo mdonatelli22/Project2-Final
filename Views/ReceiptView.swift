@@ -10,10 +10,11 @@ import SwiftUI
 struct ReceiptView: View {
     
     @EnvironmentObject var VM : ViewModel
-    //@State var totalPoints : Int = 0
-   
+  
     
     var body: some View {
+        
+        let totalPoints = self.VM.itemList.compactMap { $0.Points }.reduce(0) { $0 + $1 }
         
         VStack{
             Image("trylife-image")
@@ -31,10 +32,11 @@ struct ReceiptView: View {
             Spacer()
                 .padding()
             
+          
             ScrollView{
+                
                 ForEach(VM.itemList){item in
                     Text("\(item.ItemName) : \(item.Points) points")
-                    //self.totalPoints += item.Points
                 }
             }
             
@@ -42,7 +44,7 @@ struct ReceiptView: View {
                 .padding()
             
             HStack{
-                Text("Total :               ")
+                Text("Total : \(totalPoints) points")
                     .font(.title)
                     .bold()
                     .foregroundColor(Color(red: 0.8, green: 0.0, blue: 0.5))

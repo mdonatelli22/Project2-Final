@@ -79,12 +79,25 @@ struct AddingItemsView: View {
                         .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
                 }.padding()
                 
-                ScrollView{
-                    ForEach(VM.itemList){item in
-                        Text("\(item.ItemName) : \(item.Points) points")
-                            .bold()
-                    }
+//                Text("Shopping List")
+//                    .bold()
+//                    .font(.largeTitle)
+//                    .multilineTextAlignment(.center)
+//                    .foregroundColor(.teal)
+                
+                ScrollView(.vertical){
+                    
+                    VStack(alignment: .leading){
+                        
+                        
+                        ForEach(VM.itemList){item in
+                            Text("\(item.ItemName) : \(item.Points) points")
+                                .bold()
+                        }
+                    }.frame(maxWidth: .infinity)
+                    
                 }
+                
                 
                 NavigationLink(tag: 1, selection: $selectedSubView, destination: {
                     ReviewView()
@@ -101,8 +114,6 @@ struct AddingItemsView: View {
                     }
                 })
                 
-               
-               
                 
                 
              
