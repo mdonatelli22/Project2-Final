@@ -27,6 +27,11 @@ struct ScanningView: View {
                 ){
                     //When the scanner found a barcode
                     print("BarCodeType =",$0.type.rawValue, "Value =",$0.value)
+//                    VM.item = VM.loop(value : Int(value) ?? 0)
+//                    if (VM.item != nil){
+//                        self.VM.itemList.append(VM.item!)
+//                    }
+                    
                     self.presentationMode.wrappedValue.dismiss()
                    
                 }

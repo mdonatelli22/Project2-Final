@@ -17,89 +17,102 @@ struct AddingItemsView: View {
     
     @EnvironmentObject var VM : ViewModel
     
+    @State var selectedSubView: Int? = nil
+    
     var body: some View {
-        //NavigationView {
-        
-                    VStack {
-                        
-                       
-                       Image("trylife-image")
-                           .resizable()
-                           .frame(width: 90, height: 90)
-                           .position(x: 70, y: 0)
-                        
+       
+        ZStack(alignment: .top){
+            VStack {
+                
+               
+               Image("trylife-image")
+                   .resizable()
+                   .frame(width: 90, height: 90)
+                   .position(x: 70, y: 0)
+                
                 
 
-                        
-                        NavigationLink(destination: ScanningView(), isActive: $isShowingScanView){ EmptyView() }
+                
+                NavigationLink(destination: ScanningView(), isActive: $isShowingScanView){ EmptyView() }
 
-//                        Text("Begin Scanning Items")
-//                            .foregroundColor(.black)
-//                            .bold()
-                        
-//                        Text("")
-//
-//                        Text("Choose a method of scanning")
-//                        Text("the customer's items:")
-//
-                        
-                        HStack{
-                            TextField(
-                                "Enter barcode here",
-                                text: $barcode
-                            )
+                Text("Begin Scanning Items")
+                    .foregroundColor(.black)
+                    .bold()
+                
+                Text("")
+
+                Text("Choose a method of scanning")
+                Text("the customer's items:")
+
+                
+                HStack{
+                    TextField(
+                        "Enter barcode here",
+                        text: $barcode
+                    )
+                    .padding()
+                    Button(action: {
+    
+                        VM.item = VM.loop(barcode : Int(barcode) ?? 0)
+                        if (VM.item != nil){
+                            self.VM.itemList.append(VM.item!)
+                        }
+
+                    }){
+                        Text(" Add to cart ")
                             .padding()
-                            Button(action: {
-            
-                                VM.item = VM.loop(barcode : Int(barcode) ?? 0)
-                                if (VM.item != nil){
-                                    self.VM.itemList.append(VM.item!)
-                                }
+                            .foregroundColor(.white)
+                            .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                        
+                    }.padding()
+                    
 
-                            }){
-                                Text(" Add to cart ")
-                                    .padding()
-                                    .foregroundColor(.white)
-                                    .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
-                                
-                            }.padding()
-
-
-                  
-
-                        }
-                        
-                        Button(){
-                             isShowingScanView = true
-                        }label:{
-                            Text(" Scan Items   ")
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
-                        }.padding()
-                        
-                        ForEach(VM.itemList){item in
-                            Text("\(item.ItemName) : \(item.Points) points")
-                                .bold()
-                        }
-                        
-                        //Spacer()
-                        
-                        
-//                        NavigationLink(destination: EnterBarcodeView(barcode: ""), isActive: $isShowingEnterView) { EmptyView() }
-//                        Button(){
-//                            isShowingEnterView = true
-//                        }label:{
-//                            Text("Enter Barcode")
-//                                .padding()
-//                                .foregroundColor(.white)
-//                                .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
-//                        }
-                     
+                    
+                }//.frame(minWidth: 0, maxHeight: 400, alignment: .topLeading)
+                
+                Button(){
+                     isShowingScanView = true
+                }label:{
+                    Text(" Scan Items   ")
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                }.padding()
+                
+                ScrollView{
+                    ForEach(VM.itemList){item in
+                        Text("\(item.ItemName) : \(item.Points) points")
+                            .bold()
                     }
-//        Spacer()
-                    //.navigationTitle("Add items")
-//                    .foregroundColor()
+                }
+                
+                NavigationLink(tag: 1, selection: $selectedSubView, destination: {
+                    ReviewView()
+                }, label: {
+                    Button {
+                        
+                        
+                        selectedSubView = 1
+                    } label: {
+                        Text("Checkout")
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                    }
+                })
+                
+               
+               
+                
+                
+             
+                
+             
+            }.frame(minWidth: 0, maxHeight: 400, alignment: .topLeading)
+        }
+        
+        Spacer()
+        
     }
 }
 

@@ -72,7 +72,7 @@ struct ReviewView: View {
             Button{
                 selectedSubView = 1
             }label: {
-                Text("Checkout")
+                Text("Finish")
                     .padding()
                     .foregroundColor(.white)
                     .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
