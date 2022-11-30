@@ -38,7 +38,7 @@ struct ReceiptView: View {
         VStack{
 
             HStack{
-                Image(systemName: "star.fill")
+                Image(systemName: "bag.fill")
                     .foregroundColor(.teal)
                     //.frame(maxWidth: 150, alignment: .leading)
                 

@@ -23,7 +23,7 @@ struct ScanningView: View {
             CBScanner(
                     supportBarcode: .constant([.qr, .code128]), //Set type of barcode you want to scan
                     scanInterval: .constant(5.0), //Event will trigger every 5 seconds
-                    mockBarCode: .constant(BarcodeData(value:"Mocking data", type: .qr))
+                    mockBarCode: .constant(BarcodeData(value: "175863", type: .qr))
                 ){
                     //When the scanner found a barcode
                     print("BarCodeType =",$0.type.rawValue, "Value =",$0.value)
