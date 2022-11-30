@@ -12,6 +12,8 @@ struct ReceiptView: View {
     @EnvironmentObject var VM : ViewModel
   
     @State var selectedSubView: Int? = nil
+
+    
     
     var body: some View {
         
@@ -55,21 +57,27 @@ struct ReceiptView: View {
                 }, label:{
                     Button{
                         //make list empty again
-                        
+                        self.VM.itemList.removeAll()
                         selectedSubView = 1
+                       
                     }label:{
-                        Text("Back")
+                        Text("Start Over")
                             .padding()
                             .foregroundColor(.white)
                             .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
                     }
                 })
+            
+                
+                
                 
             }
             
             
                 
-        }.navigationTitle("Receipt")
+        }
+        .navigationTitle("Receipt")
+        . navigationBarBackButtonHidden(true)
         
     }
 }
@@ -77,5 +85,6 @@ struct ReceiptView: View {
 struct ReceiptView_Previews: PreviewProvider {
     static var previews: some View {
         ReceiptView()
+            .environmentObject(ViewModel())
     }
 }

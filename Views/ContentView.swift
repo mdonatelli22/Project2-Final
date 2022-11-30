@@ -23,32 +23,34 @@ struct ContentView: View {
                     
                     
                     Text("Shopping Center")
-                        //.font(.custom("Arial", fixedSize: 25))
+                        //.font(.custom("Open Sans", fixedSize: 25))
                         .font(.largeTitle)
                         .bold()
                     Text("")
                     Text("Welcome to the TryLife Center's shopping")
-                        //.font(.custom("Arial", fixedSize: 15))
+                        //.font(.custom("Open Sans", fixedSize: 18))
                     Text("application! Please press the button")
-                        //.font(.custom("Arial", fixedSize: 15))
+                        //.font(.custom("Open Sans", fixedSize: 18))
                     Text("below to begin scanning items.")
-                        //.font(.custom("Arial", fixedSize: 15))
+                        //.font(.custom("Open Sans", fixedSize: 18))
 
                    
                     
                     NavigationLink{
                         AddingItemsView()
+                            
                     }label: {
                    
                         VStack{
-                                Spacer()
+                                //Spacer()
                                 Text("")
                                 Text("Begin")
                                     .padding()
                                     .foregroundColor(.white)
                                     .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
                                     .font(.custom("", fixedSize: 25))
-                                    Spacer()
+                                    //.font(.custom("Open Sans", fixedSize: 25))
+                                    //Spacer()
                                     .frame(height: 250)
                         }
                     }

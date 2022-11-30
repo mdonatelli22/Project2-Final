@@ -51,6 +51,7 @@ struct AddingItemsView: View {
                         text: $barcode
                     )
                     .padding()
+                    .textFieldStyle(.roundedBorder)
                     Button(action: {
     
                         VM.item = VM.loop(barcode : Int(barcode) ?? 0)
@@ -59,10 +60,11 @@ struct AddingItemsView: View {
                         }
 
                     }){
-                        Text(" Add to cart ")
+                        Text("Add to Cart")
                             .padding()
                             .foregroundColor(.black)
                             .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                            //.font(.custom("Open Sans", fixedSize: 15))
                         
                     }.padding()
                     
@@ -75,18 +77,25 @@ struct AddingItemsView: View {
                 Button(){
                      isShowingScanView = true
                 }label:{
-                    Text(" Scan Items   ")
+                    Text("Scan Items")
                         .padding()
                         .foregroundColor(.black)
                         .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                        //.font(.custom("Open Sans", fixedSize: 15))
                 }.padding()
                 
+                HStack{
+                    Text("Shopping Cart")
+                        .bold()
+                        //.padding()
+                        .foregroundColor(.teal)
+                        //.font(.title)
+                       // .font(.custom("Open Sans", fixedSize: 15))
+                    Image(systemName: "cart")
+                        .foregroundColor(.teal)
+                }
                
-                Text("Shopping Cart")
-                    .bold()
-                    //.padding()
-                    .foregroundColor(.teal)
-                    //.font(.title)
+                
                 
                 ScrollView(.vertical){
                     
@@ -101,25 +110,33 @@ struct AddingItemsView: View {
                     
                 }
                 
+                if VM.itemList.isEmpty {
+                    
+                }else{
+                    NavigationLink(tag: 1, selection: $selectedSubView, destination: {
+                        ReviewView()
+                    }, label: {
+                        Button {
+                            
+                            selectedSubView = 1
+                        } label: {
+                            Text("Checkout")
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                                //.font(.custom("Open Sans", fixedSize: 15))
+                        }
+                    })
+                }
                 
-                NavigationLink(tag: 1, selection: $selectedSubView, destination: {
-                    ReviewView()
-                }, label: {
-                    Button {
-                        
-                        selectedSubView = 1
-                    } label: {
-                        Text("Checkout")
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
-                    }
-                })
+                
                 
                 
              
             }.frame(maxHeight: .infinity, alignment: .bottom)
-        }.navigationTitle("Scan Items")
+        }
+        .navigationTitle("Scan Items")
+        . navigationBarBackButtonHidden(true)
         
         
     }
