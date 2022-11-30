@@ -37,25 +37,48 @@ struct ReceiptView: View {
         
         VStack{
 
-            
+            HStack{
+                Image(systemName: "star.fill")
+                    .foregroundColor(.teal)
+                    //.frame(maxWidth: 150, alignment: .leading)
+                
+                Text("\(VM.itemList.count) item(s)")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
+            }.padding(10)
           
             ScrollView{
                 
                 ForEach(VM.itemList){item in
-                    Text("\(item.ItemName) : \(item.Points) points")
+                    VStack{
+                        
+                        HStack{
+                            
+                            Text("\(item.ItemName)")
+                                .bold()
+                                .frame(maxWidth: 150, alignment: .leading)
+                                
+                            
+                            Text("\(item.Points) points")
+                                .italic()
+                                .frame(maxWidth: 150, alignment: .trailing)
+                              
+                        }.padding(5)
+                    }
+                    
                 }
             }
             
 
             
-            HStack{
-                Text("Total : \(totalPoints) points")
+            VStack{
+                
+                Text("Total :  \(totalPoints) points")
                     .font(.title)
                     .bold()
-                    .foregroundColor(Color(red: 0.8, green: 0.0, blue: 0.5))
-                
+                    .foregroundColor((Color.init(red: 0.8, green: 0.0, blue: 0.5)))
 
-                
+              
                 Button{
                     self.VM.itemList.removeAll()
                     ReceiptView.popToRootView()
@@ -67,16 +90,13 @@ struct ReceiptView: View {
                 }
             
                 
-                
-                
             }
             
             
-                
         }
         .navigationTitle("Receipt")
-        . navigationBarBackButtonHidden(true)
-        
+        .navigationBarBackButtonHidden(true)
+        .padding()
     }
 }
 

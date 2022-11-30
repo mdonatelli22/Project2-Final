@@ -21,20 +21,6 @@ struct ReviewView: View {
         
         VStack{
             
-//            Image("trylife-image")
-//                .resizable()
-//                .frame(width: 90, height: 90)
-//                .position(x: 70, y: 0)
-//
-//            Text("Review Items")
-//                .bold()
-//                .font(.largeTitle)
-//                .position(x: 160, y: 5)
-//                .foregroundColor(.teal)
-            
-//            Spacer()
-//                .padding()
-            
             VStack{
                 List{
                     ForEach(VM.itemList){item in
@@ -51,10 +37,6 @@ struct ReviewView: View {
             
             
             
-//            Spacer()
-//                .padding()
-            
-            
             NavigationLink(tag: 1, selection: $selectedSubView, destination: {
                 ReceiptView()
             }, label: {
@@ -64,15 +46,16 @@ struct ReviewView: View {
             Button{
                 selectedSubView = 1
             }label: {
-                Text("Finish")
+                Text("Submit")
                     .padding()
                     .foregroundColor(.white)
                     .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
             }
-//            Spacer()
-//                .padding()
-        }.navigationTitle("Review Items")
-                       
+
+        }
+        .navigationTitle("Review Items")
+        .padding()
+                        
         
     }
 }

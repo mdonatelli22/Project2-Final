@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
 struct AddingItemsView: View {
     
     @State private var isShowingScanView = false
@@ -19,54 +25,50 @@ struct AddingItemsView: View {
     
     @State var selectedSubView: Int? = nil
     
+    private func removeItems(at offsets: IndexSet) {
+        self.VM.itemList.remove(atOffsets: offsets)
+    }
+    
+    
     var body: some View {
        
         ZStack(alignment: .top){
             VStack {
                 
-               
-//               Image("trylife-image")
-//                   .resizable()
-//                   .frame(width: 90, height: 90)
-//                   .position(x: 70, y: 0)
-                
-                
-
                 
                 NavigationLink(destination: ScanningView(), isActive: $isShowingScanView){ EmptyView() }
 
-//                Text("Begin Scanning Items")
-//                    .foregroundColor(.black)
-//                    .bold()
-//
-//                Text("")
-//
-//                Text("Choose a method of scanning")
-//                Text("the customer's items:")
 
                 
                 HStack{
                     TextField(
                         "Enter barcode here",
                         text: $barcode
-                    )
+                    ).onTapGesture {
+                        UIApplication.shared.endEditing()
+                    }
+                    .keyboardType(.numberPad)
                     .padding()
                     .textFieldStyle(.roundedBorder)
+                    
+                    
                     Button(action: {
     
                         VM.item = VM.loop(barcode : Int(barcode) ?? 0)
                         if (VM.item != nil){
                             self.VM.itemList.append(VM.item!)
+                            self.barcode = ""
                         }
+                        
 
                     }){
                         Text("Add to Cart")
-                            .padding()
+                            .padding(8)
                             .foregroundColor(.black)
                             .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
                             //.font(.custom("Open Sans", fixedSize: 15))
                         
-                    }.padding()
+                    }//.padding()
                     
 
                     
@@ -78,37 +80,45 @@ struct AddingItemsView: View {
                      isShowingScanView = true
                 }label:{
                     Text("Scan Items")
-                        .padding()
+                        .padding(8)
                         .foregroundColor(.black)
                         .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
                         //.font(.custom("Open Sans", fixedSize: 15))
                 }.padding()
                 
-                HStack{
-                    Text("Shopping Cart")
-                        .bold()
-                        //.padding()
-                        .foregroundColor(.teal)
-                        //.font(.title)
-                       // .font(.custom("Open Sans", fixedSize: 15))
-                    Image(systemName: "cart")
-                        .foregroundColor(.teal)
-                }
+//                HStack{
+//                    Text("Shopping Cart")
+//                        .bold()
+//                        //.padding()
+//                        .foregroundColor(.teal)
+//                        //.font(.title)
+//                       // .font(.custom("Open Sans", fixedSize: 15))
+//                    Image(systemName: "cart")
+//                        .foregroundColor(.teal)
+//                }
                
                 
                 
-                ScrollView(.vertical){
+                //ScrollView(.vertical){
                     
                     VStack(alignment: .leading){
                         
-                        
-                        ForEach(VM.itemList){item in
-                            Text("\(item.ItemName) : \(item.Points) points")
-                                .bold()
+                        List{
+                            ForEach(VM.itemList){item in
+                                HStack{
+                                    
+                                    Image(systemName: "cart")
+                                        .foregroundColor(.teal)
+                                    
+                                    Text("\(item.ItemName) : \(item.Points) points")
+                                        .bold()
+                                }
+                            }.onDelete(perform: self.removeItems)
                         }
+                    
                     }.frame(maxWidth: .infinity)
                     
-                }
+                //}
                 
                 if VM.itemList.isEmpty {
                     
@@ -135,9 +145,9 @@ struct AddingItemsView: View {
              
             }.frame(maxHeight: .infinity, alignment: .bottom)
         }
-        .navigationTitle("Scan Items")
-        . navigationBarBackButtonHidden(true)
-        
+        .navigationTitle("Shopping Cart")
+        //. navigationBarBackButtonHidden(true)
+        .padding()
         
     }
 }
