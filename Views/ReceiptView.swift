@@ -11,8 +11,24 @@ struct ReceiptView: View {
     
     @EnvironmentObject var VM : ViewModel
   
-    @State var selectedSubView: Int? = nil
 
+    
+    static func popToRootView() {
+            findNavigationController(viewController: UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController)?
+                .popToRootViewController(animated: true)
+        }
+    static func findNavigationController(viewController: UIViewController?) -> UINavigationController? {
+            guard let viewController = viewController else {
+                return nil
+            }
+    if let navigationController = viewController as? UINavigationController {
+                return navigationController
+            }
+    for childViewController in viewController.children {
+                return findNavigationController(viewController: childViewController)
+            }
+    return nil
+        }
     
     
     var body: some View {
@@ -20,20 +36,7 @@ struct ReceiptView: View {
         let totalPoints = self.VM.itemList.compactMap { $0.Points }.reduce(0) { $0 + $1 }
         
         VStack{
-//            Image("trylife-image")
-//                .resizable()
-//                .frame(width: 90, height: 90)
-//                .position(x: 70, y: 0)
-//
-            
-//            Text("Receipt")
-//                .bold()
-//                .font(.largeTitle)
-//                .position(x: 160, y: 5)
-//                .foregroundColor(.teal)
-//
-//            Spacer()
-//                .padding()
+
             
           
             ScrollView{
@@ -43,8 +46,7 @@ struct ReceiptView: View {
                 }
             }
             
-//            Spacer()
-//                .padding()
+
             
             HStack{
                 Text("Total : \(totalPoints) points")
@@ -52,21 +54,17 @@ struct ReceiptView: View {
                     .bold()
                     .foregroundColor(Color(red: 0.8, green: 0.0, blue: 0.5))
                 
-                NavigationLink(tag: 1, selection: $selectedSubView, destination: {
-                    ContentView()
-                }, label:{
-                    Button{
-                        //make list empty again
-                        self.VM.itemList.removeAll()
-                        selectedSubView = 1
-                       
-                    }label:{
-                        Text("Start Over")
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
-                    }
-                })
+
+                
+                Button{
+                    self.VM.itemList.removeAll()
+                    ReceiptView.popToRootView()
+                }label:{
+                    Text("Start Over")
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                }
             
                 
                 
