@@ -33,7 +33,7 @@ struct ReviewView: View {
                     }.onDelete(perform: self.removeItems)
                     
                 }
-            }
+            }.padding()
             
             
             

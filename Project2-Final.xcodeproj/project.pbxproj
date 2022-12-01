@@ -14,8 +14,6 @@
 		A71D83DA291ED96E00EC78EF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D83D9291ED96E00EC78EF /* ViewModel.swift */; };
 		A71D83DC291ED9C500EC78EF /* AddingItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D83DB291ED9C500EC78EF /* AddingItemsView.swift */; };
 		A71D83DE291ED9DB00EC78EF /* ScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D83DD291ED9DB00EC78EF /* ScanningView.swift */; };
-		A71D83E0291EDA0500EC78EF /* EnterBarcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D83DF291EDA0500EC78EF /* EnterBarcodeView.swift */; };
-		A71D83E2291EDA1200EC78EF /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D83E1291EDA1200EC78EF /* ListView.swift */; };
 		A71D83E4291EDA2400EC78EF /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D83E3291EDA2400EC78EF /* ReviewView.swift */; };
 		A71D83E6291EDA3100EC78EF /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D83E5291EDA3100EC78EF /* ReceiptView.swift */; };
 		A71D83E8291F120700EC78EF /* Trylife-list.json in Resources */ = {isa = PBXBuildFile; fileRef = A71D83E7291F120700EC78EF /* Trylife-list.json */; };
@@ -32,8 +30,6 @@
 		A71D83D9291ED96E00EC78EF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A71D83DB291ED9C500EC78EF /* AddingItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingItemsView.swift; sourceTree = "<group>"; };
 		A71D83DD291ED9DB00EC78EF /* ScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningView.swift; sourceTree = "<group>"; };
-		A71D83DF291EDA0500EC78EF /* EnterBarcodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterBarcodeView.swift; sourceTree = "<group>"; };
-		A71D83E1291EDA1200EC78EF /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		A71D83E3291EDA2400EC78EF /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		A71D83E5291EDA3100EC78EF /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
 		A71D83E7291F120700EC78EF /* Trylife-list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Trylife-list.json"; sourceTree = "<group>"; };
@@ -96,8 +92,6 @@
 				A71D83CA291ED7CF00EC78EF /* ContentView.swift */,
 				A71D83DB291ED9C500EC78EF /* AddingItemsView.swift */,
 				A71D83DD291ED9DB00EC78EF /* ScanningView.swift */,
-				A71D83DF291EDA0500EC78EF /* EnterBarcodeView.swift */,
-				A71D83E1291EDA1200EC78EF /* ListView.swift */,
 				A71D83E3291EDA2400EC78EF /* ReviewView.swift */,
 				A71D83E5291EDA3100EC78EF /* ReceiptView.swift */,
 			);
@@ -203,9 +197,7 @@
 				A71D83EA291F1AA800EC78EF /* TryLifeList.swift in Sources */,
 				A71D83DC291ED9C500EC78EF /* AddingItemsView.swift in Sources */,
 				A71D83CB291ED7CF00EC78EF /* ContentView.swift in Sources */,
-				A71D83E2291EDA1200EC78EF /* ListView.swift in Sources */,
 				A71D83DA291ED96E00EC78EF /* ViewModel.swift in Sources */,
-				A71D83E0291EDA0500EC78EF /* EnterBarcodeView.swift in Sources */,
 				A71D83C9291ED7CF00EC78EF /* Project2_FinalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

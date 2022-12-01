@@ -83,7 +83,7 @@ struct ReceiptView: View {
                     self.VM.itemList.removeAll()
                     ReceiptView.popToRootView()
                 }label:{
-                    Text("Start Over")
+                    Text("Home")
                         .padding()
                         .foregroundColor(.white)
                         .background(RoundedRectangle(cornerRadius: 5).fill(Color.init(red: 0.8, green: 0.0, blue: 0.5)))

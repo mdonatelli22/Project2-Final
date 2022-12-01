@@ -11,8 +11,6 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        //open sans sans serif
-        
         NavigationView{
             ZStack{
                     
@@ -58,9 +56,6 @@ struct ContentView: View {
                     
                 }
                 
-               // ZStack(alignment: .bottom){
-               //     Rectangle().frame(width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.height/8, alignment: .bottom)
-                //}
             }
         }
     }

@@ -86,16 +86,6 @@ struct AddingItemsView: View {
                         //.font(.custom("Open Sans", fixedSize: 15))
                 }.padding()
                 
-//                HStack{
-//                    Text("Shopping Cart")
-//                        .bold()
-//                        //.padding()
-//                        .foregroundColor(.teal)
-//                        //.font(.title)
-//                       // .font(.custom("Open Sans", fixedSize: 15))
-//                    Image(systemName: "cart")
-//                        .foregroundColor(.teal)
-//                }
                
                 
                 
