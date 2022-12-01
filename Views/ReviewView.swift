@@ -19,6 +19,8 @@ struct ReviewView: View {
     
     var body: some View {
         
+        let totalPoints = self.VM.itemList.compactMap { $0.Points }.reduce(0) { $0 + $1 }
+        
         VStack{
             
             VStack{
@@ -33,9 +35,12 @@ struct ReviewView: View {
                     }.onDelete(perform: self.removeItems)
                     
                 }
-            }.padding()
+            }//.padding()
             
-            
+            Text("Total :  \(totalPoints) points")
+                .bold()
+                .foregroundColor((Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                .padding()
             
             NavigationLink(tag: 1, selection: $selectedSubView, destination: {
                 ReceiptView()

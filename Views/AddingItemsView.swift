@@ -31,6 +31,8 @@ struct AddingItemsView: View {
     
     
     var body: some View {
+        
+        let totalPoints = self.VM.itemList.compactMap { $0.Points }.reduce(0) { $0 + $1 }
        
         ZStack(alignment: .top){
             VStack {
@@ -110,9 +112,15 @@ struct AddingItemsView: View {
                     
                 //}
                 
+                
                 if VM.itemList.isEmpty {
                     
                 }else{
+                    
+                    Text("Total :  \(totalPoints) points")
+                        .bold()
+                        .foregroundColor((Color.init(red: 0.8, green: 0.0, blue: 0.5)))
+                    
                     NavigationLink(tag: 1, selection: $selectedSubView, destination: {
                         ReviewView()
                     }, label: {
