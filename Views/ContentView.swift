@@ -56,7 +56,7 @@ struct ContentView: View {
                     TextView(text: $message)
                         //.padding(.horizontal)
                         //.padding(.vertical)
-                        .position(x: 170, y:100)
+                        .position(x: 175, y:150)
                         
                     
                     
@@ -78,7 +78,7 @@ struct ContentView: View {
                                     .frame(height: 250)
                         }
                     }
-                    .position(x: 186, y: -20)
+                    .position(x: 190, y: -20)
                     
                  
                     
