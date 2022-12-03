@@ -14,8 +14,10 @@ struct TextView: UIViewRepresentable {
  
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
+        
 
         textView.isScrollEnabled = false
+        textView.font = UIFont(name: "HelveticaNeue", size: 16)
 
         return textView
     }
@@ -37,18 +39,25 @@ struct ContentView: View {
                     
                 VStack{
                     
+                    
                     Image("logo")
                         .resizable()
                         .frame(width: 175, height: 120)
+                        .padding()
                     
                     Text("Shopping Center")
-                        .font(.custom("Open Sans", fixedSize: 25))
+                        //.font(.custom("Open Sans", fixedSize: 25))
                         .font(.largeTitle)
                         .bold()
+                        //.position(x: 200, y:100)
+                    
+                    
                         
                     TextView(text: $message)
-                    //.padding(.horizontal)
+                        //.padding(.horizontal)
                         //.padding(.vertical)
+                        .position(x: 170, y:100)
+                        
                     
                     
                     NavigationLink{
@@ -69,6 +78,9 @@ struct ContentView: View {
                                     .frame(height: 250)
                         }
                     }
+                    .position(x: 186, y: -20)
+                    
+                 
                     
                 }
                 
