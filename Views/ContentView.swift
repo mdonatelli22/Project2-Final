@@ -8,7 +8,28 @@
 import SwiftUI
 
 
+
+struct TextView: UIViewRepresentable {
+    @Binding var text: String
+ 
+    func makeUIView(context: Context) -> UITextView {
+        let textView = UITextView()
+
+        textView.isScrollEnabled = false
+
+        return textView
+    }
+ 
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        uiView.text = text
+        
+        
+    }
+
+}
+
 struct ContentView: View {
+    @State var message = "             Welcome to the TryLife Center's shopping \n           application! Please press the button below \n                            to begin scanning items."
     var body: some View {
         
         NavigationView{
@@ -20,20 +41,15 @@ struct ContentView: View {
                         .resizable()
                         .frame(width: 175, height: 120)
                     
-                    
                     Text("Shopping Center")
-                        //.font(.custom("Open Sans", fixedSize: 25))
+                        .font(.custom("Open Sans", fixedSize: 25))
                         .font(.largeTitle)
                         .bold()
-                    Text("")
-                    Text("Welcome to the TryLife Center's shopping")
-                        //.font(.custom("Open Sans", fixedSize: 18))
-                    Text("application! Please press the button")
-                        //.font(.custom("Open Sans", fixedSize: 18))
-                    Text("below to begin scanning items.")
-                        //.font(.custom("Open Sans", fixedSize: 18))
-
-                   
+                        
+                    TextView(text: $message)
+                    //.padding(.horizontal)
+                        //.padding(.vertical)
+                    
                     
                     NavigationLink{
                         AddingItemsView()
@@ -58,6 +74,7 @@ struct ContentView: View {
                 
             }
         }
+        
     }
 }
 
